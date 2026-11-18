@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陳閔揚｜雅億科創 執行長 — 雲端電子名片</title>
+  <meta name="description" content="陳閔揚｜雅億科創 執行長｜AI 落地架構師 × ISO 14064-1 / 14067 / 14068-1 主導稽核員｜碳盤查、碳足跡、碳中和、能源管理、智慧製造系統建置。" />
+  <meta property="og:title" content="陳閔揚｜雅億科創 執行長 — 雲端電子名片" />
+  <meta property="og:description" content="AI 落地架構師 × ESG 淨零碳管理專家｜碳盤查、產品碳足跡、碳中和專案、能源管理與智慧製造系統建置。" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://frankchen0514.github.io/ecard/" />
+  <style>
+    :root {
+      --bg-page: #eef2f7;
+      --bg-card: #ffffff;
+      --bg-soft: #f8fafc;
+      --navy-950: #09182d;
+      --navy-900: #0f2544;
+      --navy-800: #17365d;
+      --brand-blue: #0056b3;
+      --brand-cyan: #0096c7;
+      --brand-emerald: #059669;
+      --btn-green-bg: #a3d9a5;
+      --btn-green-text: #0d3b1e;
+      --btn-ice-bg: #d8ecff;
+      --btn-ice-text: #0f3a66;
+      --text-main: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius-card: 22px;
+      --radius-btn: 12px;
+      --shadow-card: 0 18px 45px -15px rgba(15, 37, 68, 0.18), 0 4px 14px -4px rgba(15, 37, 68, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px 14px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at 15% 10%, #dbeafe 0%, var(--bg-page) 45%, #e2e8f0 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card-shell {
+      max-width: 460px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Hero Header */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 58%, #0e3a5c 100%);
+      color: #ffffff;
+      padding: 28px 24px 24px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 88% 18%, rgba(0, 180, 216, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 12% 90%, rgba(16, 185, 129, 0.18) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .company-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #bae6fd;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(186, 230, 253, 0.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .hero-qr-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.18s ease, transform 0.12s ease;
+    }
+
+    .hero-qr-trigger:hover {
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .hero-qr-trigger:active {
+      transform: scale(0.97);
+    }
+
+    .profile-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #38bdf8 0%, #0284c7 55%, #059669 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .profile-meta h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .profile-role {
+      margin: 4px 0 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: #e0f2fe;
+    }
+
+    .profile-tagline {
+      margin: 6px 0 0;
+      font-size: 12.5px;
+      color: #7dd3fc;
+      font-weight: 500;
+    }
+
+    .quick-contact-bar {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #f1f5f9;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: background-color 0.18s ease;
+    }
+
+    .quick-item:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .quick-item span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Card Content */
+    .content {
+      padding: 22px 22px 10px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-cyan);
+    }
+
+    .iso-badge {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .services-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f3a66;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      padding: 6px 11px;
+      border-radius: 8px;
+      line-height: 1.3;
+    }
+
+    .service-tag.highlight {
+      background: #dcfce7;
+      border-color: #bbf7d0;
+      color: #14532d;
+    }
+
+    /* Action Footer */
+    .actions {
+      padding: 8px 22px 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 16px;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, filter 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .btn:hover {
+      filter: brightness(0.96);
+    }
+
+    .btn:active {
+      transform: scale(0.985);
+    }
+
+    .btn-primary-dark {
+      background: var(--brand-blue);
+      color: #ffffff;
+      box-shadow: 0 6px 16px -4px rgba(0, 86, 179, 0.4);
+    }
+
+    .btn-primary-cyan {
+      background: #00b4d8;
+      color: #ffffff;
+      box-shadow: 0 6px 16px -4px rgba(0, 180, 216, 0.35);
+    }
+
+    .btn-line {
+      background: #06c755;
+      color: #ffffff;
+      box-shadow: 0 6px 16px -4px rgba(6, 199, 85, 0.35);
+    }
+
+    .btn-soft-green {
+      background: var(--btn-green-bg);
+      color: var(--btn-green-text);
+    }
+
+    .btn-soft-ice {
+      background: var(--btn-ice-bg);
+      color: var(--btn-ice-text);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--navy-900);
+      border: 1.5px solid var(--border);
+    }
+
+    .action-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 22px 20px;
+    }
+
+    .status-toast {
+      min-height: 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-emerald);
+      margin-top: 2px;
+    }
+
+    /* Native Modal Dialog — Modern Web Guidance Compliant */
+    dialog {
+      margin: auto;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #ffffff;
+      color: var(--text-main);
+      width: min(360px, calc(100vw - 32px));
+      max-height: calc(100dvh - 32px);
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+    }
+
+    dialog[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    dialog:modal {
+      overscroll-behavior: contain;
+    }
+
+    dialog::backdrop {
+      overflow: hidden;
+      overscroll-behavior: contain;
+      background-color: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(4px);
+    }
+
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dialog-header h2 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .dialog-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .qr-frame {
+      display: inline-flex;
+      padding: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      margin-bottom: 12px;
+    }
+
+    .qr-caption {
+      margin: 0 0 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .qr-url {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      word-break: break-all;
+    }
+
+    .dialog-footer {
+      padding: 0 20px 18px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dialog-close-btn {
+      width: 100%;
+      min-height: 42px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .dialog-close-btn:hover {
+      background: #e2e8f0;
+    }
+
+    @media (max-width: 380px) {
+      .quick-contact-bar,
+      .action-split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <span class="company-pill">雅億科創｜JAELPRO</span>
+        <button type="button" id="open-qr-top" class="hero-qr-trigger" aria-haspopup="dialog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+            <path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 21h3"></path>
+          </svg>
+          名片 QR Code
+        </button>
+      </div>
+
+      <div class="profile-row">
+        <div class="avatar" aria-hidden="true">陳</div>
+        <div class="profile-meta">
+          <h1>陳閔揚</h1>
+          <p class="profile-role">雅億科創 執行長</p>
+          <p class="profile-tagline">AI 落地架構師 × ISO 淨零減碳主導稽核員</p>
+        </div>
+      </div>
+
+      <div class="quick-contact-bar">
+        <a class="quick-item" href="tel:0937396119">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0937-396-119</span>
+        </a>
+        <a class="quick-item" href="https://www.jaelpro.com" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>www.jaelpro.com</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="section" aria-labelledby="sec-titles">
+        <h2 id="sec-titles" class="section-title">專業頭銜與國際查證資格</h2>
+        <ul class="bullet-list">
+          <li><span class="iso-badge">雅億科創</span> 執行長</li>
+          <li><span class="iso-badge">台灣節能減排協會</span> 顧問</li>
+          <li><span class="iso-badge">ISO 14064-1</span> 主導稽核員</li>
+          <li><span class="iso-badge">ISO 14067</span> 主導稽核員</li>
+          <li><span class="iso-badge">ISO 14068-1</span> 主導稽核員</li>
+          <li><span class="iso-badge">ISO 50001</span> 稽核員</li>
+          <li><span class="iso-badge">AI 落地架構師</span></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sec-exp">
+        <h2 id="sec-exp" class="section-title">重要經歷</h2>
+        <ul class="bullet-list">
+          <li>經濟部精密機械小組 專案經理</li>
+          <li>工研院 / 資策會 / 商研院 研究員</li>
+          <li>經濟部產發署 / 能源署 雲端與大數據產業、精密機械產業、能源產業政策 研擬與推動</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sec-services">
+        <h2 id="sec-services" class="section-title">專業服務項目</h2>
+        <div class="services-box">
+          <div class="service-tags">
+            <span class="service-tag highlight">碳盤查報告</span>
+            <span class="service-tag highlight">產品碳足跡報告</span>
+            <span class="service-tag highlight">碳中和專案</span>
+            <span class="service-tag">能源管理系統建置</span>
+            <span class="service-tag">智慧製造 / 智慧物聯網系統建置</span>
+            <span class="service-tag">AI AGENT 落地架構師</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="actions">
+      <button type="button" id="btn-vcf" class="btn btn-primary-dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="20" y1="8" x2="20" y2="14"></line>
+          <line x1="23" y1="11" x2="17" y2="11"></line>
+        </svg>
+        一鍵存入通訊錄 (.vcf)
+      </button>
+
+      <a class="btn btn-primary-cyan" href="https://www.jaelpro.com" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        雅億科創官方網站
+      </a>
+
+      <div class="action-split">
+        <a class="btn btn-soft-green" href="tel:0937396119">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          撥打電話
+        </a>
+
+        <button type="button" id="btn-share" class="btn btn-soft-ice">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          轉貼分享
+        </button>
+      </div>
+
+      <a class="btn btn-line" href="https://liff.line.me/1654437282-A1Bj7p4a/share.html?template=aHR0cHM6Ly9mcmFua2NoZW4wNTE0LmdpdGh1Yi5pby9lY2FyZC9saW5lLWZsZXgtY2FyZC50eHQ" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+        </svg>
+        在 LINE 開啟互動名片並轉傳好友
+      </a>
+
+      <button type="button" id="open-qr-bottom" class="btn btn-outline">
+        顯示我的雲端電子名片 QR Code
+      </button>
+
+      <div id="status-toast" class="status-toast" role="status" aria-live="polite"></div>
+    </footer>
+
+    <div class="footer-note">
+      陳閔揚｜雅億科創 執行長 • 0937-396-119 • www.jaelpro.com
+    </div>
+  </main>
+
+  <dialog id="qr-dialog" closedby="any" aria-labelledby="qr-dialog-title">
+    <div class="dialog-header">
+      <h2 id="qr-dialog-title">掃描開啟雲端電子名片</h2>
+    </div>
+    <div class="dialog-body">
+      <div id="qr-container" class="qr-frame" aria-label="電子名片 QR Code"></div>
+      <p class="qr-caption">陳閔揚｜雅億科創 執行長</p>
+      <p id="qr-url-label" class="qr-url">https://frankchen0514.github.io/ecard/</p>
+    </div>
+    <form method="dialog" class="dialog-footer">
+      <button type="submit" value="close" class="dialog-close-btn" autofocus>關閉</button>
+    </form>
+  </dialog>
+
+  <script>
+    const CARD_DATA = {
+      name: '陳閔揚',
+      familyName: '陳',
+      givenName: '閔揚',
+      org: '雅億科創',
+      title: '執行長｜台灣節能減排協會 顧問｜AI 落地架構師',
+      phone: '0937-396-119',
+      phoneTel: '+886937396119',
+      url: 'https://frankchen0514.github.io/ecard/',
+      lineCardUrl: 'https://liff.line.me/1654437282-A1Bj7p4a/share.html?template=aHR0cHM6Ly9mcmFua2NoZW4wNTE0LmdpdGh1Yi5pby9lY2FyZC9saW5lLWZsZXgtY2FyZC50eHQ',
+      note: 'ISO 14064-1 / 14067 / 14068-1 主導稽核員、ISO 50001 稽核員。服務項目：碳盤查報告、產品碳足跡報告、碳中和專案、能源管理系統建置、智慧製造/智慧物聯網系統建置、AI AGENT 落地架構師。'
+    };
+
+    // Pure-JS ISO 18004 QR Code Generator (Byte Mode, ECC M, Versions 1..8)
+    const QR_VER_M = [
+      null,
+      { size: 21, align: [], blocks: [[1, 16, 10]] },
+      { size: 25, align: [6, 18], blocks: [[1, 28, 16]] },
+      { size: 29, align: [6, 22], blocks: [[1, 44, 26]] },
+      { size: 33, align: [6, 26], blocks: [[2, 32, 18]] },
+      { size: 37, align: [6, 30], blocks: [[2, 43, 24]] },
+      { size: 41, align: [6, 34], blocks: [[4, 27, 16]] },
+      { size: 45, align: [6, 22, 38], blocks: [[4, 31, 18]] },
+      { size: 49, align: [6, 24, 42], blocks: [[2, 38, 22], [2, 39, 22]] }
+    ];
+
+    function qrGfMul(x, y) {
+      let r = 0;
+      for (let i = 7; i >= 0; i--) {
+        r = (r << 1) ^ ((r >>> 7) * 0x11d);
+        if ((y >>> i) & 1) r ^= x;
+      }
+      return r;
+    }
+
+    function qrRsDivisor(deg) {
+      const res = new Uint8Array(deg);
+      res[deg - 1] = 1;
+      let root = 1;
+      for (let i = 0; i < deg; i++) {
+        for (let j = 0; j < deg; j++) {
+          res[j] = qrGfMul(res[j], root);
+          if (j + 1 < deg) res[j] ^= res[j + 1];
+        }
+        root = qrGfMul(root, 2);
+      }
+      return res;
+    }
+
+    function qrRsRemainder(data, div) {
+      const res = new Uint8Array(div.length);
+      for (const b of data) {
+        const f = b ^ res[0];
+        res.copyWithin(0, 1);
+        res[res.length - 1] = 0;
+        for (let i = 0; i < div.length; i++) res[i] ^= qrGfMul(div[i], f);
+      }
+      return res;
+    }
+
+    function buildQrSvg(text, sizePx = 216) {
+      const bytes = new TextEncoder().encode(text);
+      let ver = 1;
+      let spec = null;
+      for (let v = 1; v < QR_VER_M.length; v++) {
+        const s = QR_VER_M[v];
+        const cap = s.blocks.reduce((sum, [cnt, d]) => sum + cnt * d, 0);
+        if (bytes.length + 2 <= cap) {
+          ver = v;
+          spec = s;
+          break;
+        }
+      }
+      if (!spec) return '';
+
+      const totalDataBytes = spec.blocks.reduce((sum, [cnt, d]) => sum + cnt * d, 0);
+      const bits = [];
+      const pushBits = (val, len) => {
+        for (let i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1);
+      };
+      pushBits(0b0100, 4);
+      pushBits(bytes.length, 8);
+      for (const b of bytes) pushBits(b, 8);
+      const maxBits = totalDataBytes * 8;
+      pushBits(0, Math.min(4, maxBits - bits.length));
+      while (bits.length % 8 !== 0) bits.push(0);
+      const padBytes = [0xec, 0x11];
+      for (let i = 0; bits.length < maxBits; i++) pushBits(padBytes[i % 2], 8);
+
+      const dataBytes = new Uint8Array(totalDataBytes);
+      for (let i = 0; i < totalDataBytes; i++) {
+        let v = 0;
+        for (let b = 0; b < 8; b++) v = (v << 1) | bits[i * 8 + b];
+        dataBytes[i] = v;
+      }
+
+      const dataBlocks = [];
+      const eccBlocks = [];
+      let offset = 0;
+      let maxD = 0;
+      let eccLen = 0;
+      for (const [cnt, d, e] of spec.blocks) {
+        eccLen = e;
+        if (d > maxD) maxD = d;
+        const div = qrRsDivisor(e);
+        for (let c = 0; c < cnt; c++) {
+          const blk = dataBytes.slice(offset, offset + d);
+          offset += d;
+          dataBlocks.push(blk);
+          eccBlocks.push(qrRsRemainder(blk, div));
+        }
+      }
+
+      const allCodewords = [];
+      for (let i = 0; i < maxD; i++) {
+        for (const blk of dataBlocks) if (i < blk.length) allCodewords.push(blk[i]);
+      }
+      for (let i = 0; i < eccLen; i++) {
+        for (const blk of eccBlocks) allCodewords.push(blk[i]);
+      }
+
+      const n = spec.size;
+      const grid = Array.from({ length: n }, () => new Int8Array(n));
+      const isFunc = Array.from({ length: n }, () => new Uint8Array(n));
+
+      const setMod = (r, c, dark, func = true) => {
+        if (r < 0 || r >= n || c < 0 || c >= n) return;
+        grid[r][c] = dark ? 2 : 1;
+        if (func) isFunc[r][c] = 1;
+      };
+
+      const drawFinder = (tr, tc) => {
+        for (let dr = -1; dr <= 7; dr++) {
+          for (let dc = -1; dc <= 7; dc++) {
+            const r = tr + dr, c = tc + dc;
+            if (r < 0 || r >= n || c < 0 || c >= n) continue;
+            const in7 = dr >= 0 && dr <= 6 && dc >= 0 && dc <= 6;
+            const dark = in7 && (dr === 0 || dr === 6 || dc === 0 || dc === 6 || (dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4));
+            setMod(r, c, dark, true);
+          }
+        }
+      };
+      drawFinder(0, 0);
+      drawFinder(0, n - 7);
+      drawFinder(n - 7, 0);
+
+      for (let i = 8; i < n - 8; i++) {
+        setMod(6, i, i % 2 === 0, true);
+        setMod(i, 6, i % 2 === 0, true);
+      }
+
+      for (const ar of spec.align) {
+        for (const ac of spec.align) {
+          if ((ar === 6 && ac === 6) || (ar === 6 && ac === n - 7) || (ar === n - 7 && ac === 6)) continue;
+          for (let dr = -2; dr <= 2; dr++) {
+            for (let dc = -2; dc <= 2; dc++) {
+              setMod(ar + dr, ac + dc, Math.max(Math.abs(dr), Math.abs(dc)) !== 1, true);
+            }
+          }
+        }
+      }
+
+      for (let i = 0; i < 9; i++) {
+        if (i !== 6) {
+          setMod(8, i, false, true);
+          setMod(i, 8, false, true);
+        }
+      }
+      for (let i = 0; i < 8; i++) {
+        setMod(8, n - 1 - i, false, true);
+        setMod(n - 1 - i, 8, false, true);
+      }
+      setMod(n - 8, 8, true, true);
+
+      if (ver >= 7) {
+        let rem = ver;
+        for (let i = 0; i < 12; i++) rem = (rem << 1) ^ ((rem >>> 11) * 0x1f25);
+        const vbits = (ver << 12) | rem;
+        for (let i = 0; i < 18; i++) {
+          const dark = ((vbits >>> i) & 1) === 1;
+          const a = Math.floor(i / 3);
+          const b = n - 11 + (i % 3);
+          setMod(a, b, dark, true);
+          setMod(b, a, dark, true);
+        }
+      }
+
+      let bitIdx = 0;
+      const totalDataBits = allCodewords.length * 8;
+      for (let right = n - 1; right >= 1; right -= 2) {
+        if (right === 6) right = 5;
+        for (let vert = 0; vert < n; vert++) {
+          for (let j = 0; j < 2; j++) {
+            const c = right - j;
+            const upward = ((right + 1) & 2) === 0;
+            const r = upward ? n - 1 - vert : vert;
+            if (!isFunc[r][c]) {
+              let dark = false;
+              if (bitIdx < totalDataBits) {
+                dark = ((allCodewords[bitIdx >>> 3] >>> (7 - (bitIdx & 7))) & 1) === 1;
+                bitIdx++;
+              }
+              grid[r][c] = dark ? 2 : 1;
+            }
+          }
+        }
+      }
+
+      const drawFormat = (g, mask) => {
+        const data = (0b00 << 3) | mask;
+        let rem = data;
+        for (let i = 0; i < 10; i++) rem = (rem << 1) ^ ((rem >>> 9) * 0x537);
+        const bits = ((data << 10) | rem) ^ 0x5412;
+        for (let i = 0; i <= 5; i++) g[8][i] = ((bits >>> (14 - i)) & 1) ? 2 : 1;
+        g[8][7] = ((bits >>> 8) & 1) ? 2 : 1;
+        g[8][8] = ((bits >>> 7) & 1) ? 2 : 1;
+        g[7][8] = ((bits >>> 6) & 1) ? 2 : 1;
+        for (let i = 0; i <= 5; i++) g[5 - i][8] = ((bits >>> (5 - i)) & 1) ? 2 : 1;
+        for (let i = 0; i < 7; i++) g[n - 1 - i][8] = ((bits >>> (14 - i)) & 1) ? 2 : 1;
+        for (let i = 0; i < 8; i++) g[8][n - 8 + i] = ((bits >>> (7 - i)) & 1) ? 2 : 1;
+        g[n - 8][8] = 2;
+      };
+
+      const maskFn = [
+        (r, c) => (r + c) % 2 === 0,
+        (r) => r % 2 === 0,
+        (_r, c) => c % 3 === 0,
+        (r, c) => (r + c) % 3 === 0,
+        (r, c) => (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0,
+        (r, c) => ((r * c) % 2) + ((r * c) % 3) === 0,
+        (r, c) => (((r * c) % 2) + ((r * c) % 3)) % 2 === 0,
+        (r, c) => (((r + c) % 2) + ((r * c) % 3)) % 2 === 0
+      ];
+
+      const penalty = (g) => {
+        let pen = 0;
+        for (let r = 0; r < n; r++) {
+          let runC = 1, runV = g[r][0];
+          for (let c = 1; c < n; c++) {
+            if (g[r][c] === runV) runC++;
+            else { if (runC >= 5) pen += runC - 2; runC = 1; runV = g[r][c]; }
+          }
+          if (runC >= 5) pen += runC - 2;
+        }
+        for (let c = 0; c < n; c++) {
+          let runC = 1, runV = g[0][c];
+          for (let r = 1; r < n; r++) {
+            if (g[r][c] === runV) runC++;
+            else { if (runC >= 5) pen += runC - 2; runC = 1; runV = g[r][c]; }
+          }
+          if (runC >= 5) pen += runC - 2;
+        }
+        for (let r = 0; r < n - 1; r++) {
+          for (let c = 0; c < n - 1; c++) {
+            const v = g[r][c];
+            if (g[r][c + 1] === v && g[r + 1][c] === v && g[r + 1][c + 1] === v) pen += 3;
+          }
+        }
+        let dark = 0;
+        for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (g[r][c] === 2) dark++;
+        pen += Math.floor(Math.abs((dark * 100) / (n * n) - 50) / 5) * 10;
+        return pen;
+      };
+
+      let bestPen = Infinity;
+      let bestGrid = null;
+      for (let m = 0; m < 8; m++) {
+        const cand = grid.map((row, r) => row.map((v, c) => (isFunc[r][c] ? v : (maskFn[m](r, c) ? (v === 2 ? 1 : 2) : v))));
+        drawFormat(cand, m);
+        const p = penalty(cand);
+        if (p < bestPen) {
+          bestPen = p;
+          bestGrid = cand;
+        }
+      }
+
+      const pad = 4;
+      const total = n + pad * 2;
+      let path = '';
+      for (let r = 0; r < n; r++) {
+        for (let c = 0; c < n; c++) {
+          if (bestGrid[r][c] === 2) {
+            path += `M${c + pad},${r + pad}h1v1h-1z`;
+          }
+        }
+      }
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 ${total} ${total}" shape-rendering="crispEdges" role="img" aria-label="電子名片 QR Code"><rect width="${total}" height="${total}" fill="#ffffff"/><path d="${path}" fill="#0f172a"/></svg>`;
+    }
+
+    const toastEl = document.getElementById('status-toast');
+    let toastTimer = null;
+    function showToast(msg) {
+      toastEl.textContent = msg;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toastEl.textContent = ''; }, 3200);
+    }
+
+    // 1. Download vCard (.vcf)
+    document.getElementById('btn-vcf').addEventListener('click', () => {
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        `N;CHARSET=UTF-8:${CARD_DATA.familyName};${CARD_DATA.givenName};;;`,
+        `FN;CHARSET=UTF-8:${CARD_DATA.name}`,
+        `ORG;CHARSET=UTF-8:${CARD_DATA.org}`,
+        `TITLE;CHARSET=UTF-8:${CARD_DATA.title}`,
+        `TEL;TYPE=CELL,VOICE:${CARD_DATA.phoneTel}`,
+        `URL:${CARD_DATA.url}`,
+        'URL;TYPE=WORK:https://www.jaelpro.com',
+        `NOTE;CHARSET=UTF-8:${CARD_DATA.note}`,
+        'END:VCARD'
+      ].join('\r\n');
+
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'chen-min-yang.vcf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast('已匯出通訊錄檔案 chen-min-yang.vcf');
+    });
+
+    // 2. Native Web Share + Clipboard Fallback
+    document.getElementById('btn-share').addEventListener('click', async () => {
+      const targetUrl = window.location.protocol.startsWith('http') ? window.location.href : CARD_DATA.url;
+      const shareText = `${CARD_DATA.name}｜${CARD_DATA.org} 執行長\n電話：${CARD_DATA.phone}\n網址：${targetUrl}`;
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: `${CARD_DATA.name}｜電子名片`,
+            text: shareText,
+            url: targetUrl
+          });
+          return;
+        } catch (err) {
+          if (err && err.name === 'AbortError') return;
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(shareText);
+          showToast('已複製名片資訊與連結，可直接貼上分享！');
+          return;
+        } catch (_e) {}
+      }
+      showToast(`分享連結：${targetUrl}`);
+    });
+
+    // 3. Native <dialog closedby="any"> QR Modal + Mandatory Fallback
+    const qrDialog = document.getElementById('qr-dialog');
+    const qrContainer = document.getElementById('qr-container');
+    const qrUrlLabel = document.getElementById('qr-url-label');
+
+    function openQrModal() {
+      const targetUrl = window.location.protocol.startsWith('http') ? window.location.href : CARD_DATA.url;
+      qrContainer.innerHTML = buildQrSvg(targetUrl, 210);
+      qrUrlLabel.textContent = targetUrl;
+      qrDialog.showModal();
+    }
+
+    document.getElementById('open-qr-top').addEventListener('click', openQrModal);
+    document.getElementById('open-qr-bottom').addEventListener('click', openQrModal);
+
+    qrDialog.addEventListener('close', () => {
+      qrDialog.returnValue = '';
+    });
+
+    // Mandatory fallback for browsers without <dialog closedby="any"> support (e.g. Safari)
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      const outside = (e, dialog) => {
+        const rect = dialog.getBoundingClientRect();
+        return e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom;
+      };
+      let pressedOutside = false;
+      qrDialog.addEventListener('pointerdown', (e) => {
+        pressedOutside = e.target === qrDialog && outside(e, qrDialog);
+      });
+      qrDialog.addEventListener('pointerup', (e) => {
+        if (pressedOutside && e.target === qrDialog && outside(e, qrDialog)) {
+          qrDialog.close();
+        }
+        pressedOutside = false;
+      });
+    }
+  </script>
+</body>
+</html>
